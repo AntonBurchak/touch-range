@@ -28,7 +28,9 @@ input.addEventListener('input', (e) => {
     console.log(e.target.value, ((e.target.value) * 100) / 8000);
 
     const value = (e.target.value-e.target.min)/(e.target.max-e.target.min)*100
-    e.target.style.background = 'linear-gradient(to right, #82CFD0 0%, #82CFD0 ' + value + '%, #fff ' + value + '%, white 100%)'
+    e.target.style.background = 'linear-gradient(to right, #82CFD0 0%, #82CFD0 ' + value + '%, #fff ' + value + '%, white 100%)';
+
+    perChange(e.target.value)
 })
 
 
@@ -44,6 +46,12 @@ function round(value, step) {
 }
 
 console.log(round(3400, 1000))
+
+const dem = document.querySelector('.demonstration');
+
+function perChange(value) {
+    dem.innerHTML = 'Change! : ' + value;
+}
 
 // class DraggebleRange {
 //     constructor(options) {
